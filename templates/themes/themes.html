@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+    Обьявления
+{% endblock %}
+{% block content %}
+<h2 style="object-position: center">Все темы</h2>
+{% for theme in themes %}
+    <div class="card text-left mb-1">
+        <div class="card-header bg-dark">
+            <h5 class="card-title"><a href="{% url 'ads_of_theme' theme.rubric.id theme.id %}">{{ theme.theme }}</a></h5>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

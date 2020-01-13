@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
     <h2 class="mb-4 mt-4"><a href="{% url 'create_ads' %}">Создать объявление</a></h2>
-    {% for ads in adss %}
+    {% for ads in all_ads %}
         <div class="card text-left mb-5">
             <div class="card-header bg-dark">
                 <h5><a href="{% url 'detail_ads' ads.rubric.id ads.theme.id ads.id %}" class="card-body">{{ ads.title }}</a></h5>
@@ -16,5 +16,4 @@
         </div>
     {% endfor %}
 {% endblock %}
-
 

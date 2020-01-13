@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+    Обьявления
+{% endblock %}
+{% block content %}
+    <h2 class="mb-4 mt-4">Все рубрики</h2>
+    {% for rubric in rubrics %}
+        <div class="card text-left mb-1">
+            <div class="card-header bg-dark">
+                <h6 class="card-title"><a href="{% url 'theme_list' rubric.id %}">{{ rubric.rubric }}</a></h6>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+

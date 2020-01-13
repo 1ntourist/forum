@@ -23,43 +23,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'home' %}">Форум<span class="sr-only">(current)</span></a>
             </li>
             {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="">My account<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="">Мой профиль<span class="sr-only">(current)</span></a>
                 </li>
             {% endif %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'ads_list' %}">Ads</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Rubric
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Buy</a>
-                    <a class="dropdown-item" href="#">Rent</a>
-                    <a class="dropdown-item" href="#">Services</a>
-                    <a class="dropdown-item" href="#">Job</a>
+                <a class="nav-link" href="{% url 'rubric_list' %}">Категории</a>
             </li>
             {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Log out</a>
-                </li>
-            {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Log in</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'signup' %}">Sign up</a>
+                    <a class="nav-link" href="{% url 'logout' %}">Выйти</a>
                 </li>
             {% endif %}
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
         </form>
     </div>
 </nav>
